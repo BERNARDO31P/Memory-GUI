@@ -12,7 +12,7 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 
 /**
- * @author Marco Forrer
+ * @author Bernardo de Oliveira
  * last edit: 09.01.2020
  */
 
