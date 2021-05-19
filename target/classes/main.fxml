@@ -4,7 +4,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane maxHeight="635.0" maxWidth="800.0" minHeight="635.0" minWidth="800.0" prefHeight="635.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.forrer.memory.Controller">
+<AnchorPane maxHeight="635.0" maxWidth="800.0" minHeight="635.0" minWidth="800.0" prefHeight="635.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/15.0.1-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.forrer.memory.Controller">
     <GridPane fx:id="playField" gridLinesVisible="true" style="-fx-background-color: white;" AnchorPane.bottomAnchor="35.0" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <columnConstraints>
             <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />

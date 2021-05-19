@@ -43,8 +43,7 @@ public class Main extends Application {
      */
     @Override
     public void start(Stage primaryStage) throws Exception {
-
-        Parent root = FXMLLoader.load(getClass().getResource("main.fxml"));
+        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("main.fxml"));
         primaryStage.setTitle("Memory");
         scene = new Scene(root, 800, 635);
         primaryStage.setScene(scene);
@@ -54,6 +53,20 @@ public class Main extends Application {
         playerList = (GridPane) Main.scene.lookup("#list");
 
         primaryStage.show();
+        
+        /*FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/forrer/memory/main.fxml"));
+        loader.load();
+        loader.setController(new Controller());
+        Parent root = loader.getRoot();
+        primaryStage.setTitle("Memory");
+        scene = new Scene(root, 800, 635);
+        primaryStage.setScene(scene);
+        primaryStage.setResizable(false);
+        playField = (GridPane) Main.scene.lookup("#playField");
+        playField.setAlignment(Pos.CENTER);
+        playerList = (GridPane) Main.scene.lookup("#list");
+
+        primaryStage.show();*/
 
     }
 }

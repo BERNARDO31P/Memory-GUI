@@ -1,6 +1,5 @@
 package com.forrer.memory;
 
-import com.sun.org.apache.bcel.internal.generic.INSTANCEOF;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.collections.ObservableList;
@@ -75,7 +74,7 @@ public class Controller {
      * @param event Informationen zur Benutzereingabe
      */
     @FXML
-    private void addPlayer(ActionEvent event) {
+    public void addPlayer(ActionEvent event) {
         TextInputDialog dialog = new TextInputDialog();
         dialog.setTitle("Player name");
         dialog.setContentText("Please enter your name:");
@@ -112,12 +111,12 @@ public class Controller {
      * @param event Informationen zur Benutzereingabe
      * @throws IOException Verhindert einen Absturz falls die Dateien nicht geladen werden können
      */
-    private void showSmiley(MouseEvent event) throws IOException {
+    public void showSmiley(MouseEvent event) throws IOException {
         if (uncovered == 2) return;
 
         ImageView imageView = (ImageView) event.getSource();
 
-        BufferedImage image = ImageIO.read(getClass().getResource("Resources/" + imageView.fieldSmiley + ".png"));
+        BufferedImage image = ImageIO.read(getClass().getClassLoader().getResource("Resources/" + imageView.fieldSmiley + ".png"));
         imageView.setImage(SwingFXUtils.toFXImage(image, null));
         uncovered++;
 
@@ -191,7 +190,7 @@ public class Controller {
                     @Override
                     public void handle(ActionEvent event) {
                         try {
-                            BufferedImage image = ImageIO.read(getClass().getResource("Resources/question.png"));
+                            BufferedImage image = ImageIO.read(getClass().getClassLoader().getResource("Resources/question.png"));
                             imageView.setImage(SwingFXUtils.toFXImage(image, null));
                             lastSmiley.setImage(SwingFXUtils.toFXImage(image, null));
                         } catch (Exception ignored) {
@@ -239,7 +238,7 @@ public class Controller {
      * @throws IOException Verhindert einen Absturz falls die Dateien nicht geladen werden können
      */
     @FXML
-    private void startGame(ActionEvent event) throws IOException {
+    public void startGame(ActionEvent event) throws IOException {
 
         if (playerCount < 2) {
             showAlert(Alert.AlertType.ERROR, "Player count", "There have to be at least two players.");
@@ -266,7 +265,7 @@ public class Controller {
 
                 }
 
-                BufferedImage image = ImageIO.read(getClass().getResource("Resources/question.png"));
+                BufferedImage image = ImageIO.read(getClass().getClassLoader().getResource("Resources/question.png"));
                 ImageView imageView = new ImageView(SwingFXUtils.toFXImage(image, null));
                 imageView.addEventHandler(MouseEvent.MOUSE_CLICKED, mouseEvent -> {
                     try {
